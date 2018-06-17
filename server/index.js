@@ -13,7 +13,7 @@ massive(process.env.CONNECTION_STRING)
   })
   .catch(err => console.log(err));
 
-const port = process.env.PORT || 3001;
+const port = 3001;
 
 app.post("/api/products", controller.create);
 app.get("/api/products", controller.read_products);

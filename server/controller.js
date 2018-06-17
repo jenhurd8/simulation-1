@@ -1,10 +1,9 @@
 module.exports = {
   create: (req, res, next) => {
-    const dbInstance = req.app.get("db");
+    let db = req.app.get("db");
     const { name, price, img } = req.body;
 
-    dbInstance
-      .create([name, price, img])
+    db.create([name, price, img])
       .then(() => res.sendStatus(200))
       .catch(err => {
         res.status(500).send({
@@ -15,16 +14,9 @@ module.exports = {
   },
 
   read_products: (req, res, next) => {
-    const dbInstance = req.app.get("db");
-
-    dbInstance
-      .read_products()
-      .then(() => res.sendStatus(products))
-      .catch(err => {
-        res.status(500).send({
-          errorMessage: "Error!"
-        });
-        console.log(err);
-      });
+    let db = req.app.get("db");
+    db.read_products().then(products => {
+      return res.status(200).send(products);
+    });
   }
 };

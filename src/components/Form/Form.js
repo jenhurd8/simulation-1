@@ -10,6 +10,8 @@ class Form extends Component {
       price: 0,
       img: ""
     };
+    this.formHandler = this.formHandler.bind(this);
+    this.cancelHandler = this.cancelHandler.bind(this);
   }
 
   onChangeHandler = e => {
@@ -23,19 +25,16 @@ class Form extends Component {
   };
 
   formHandler = e => {
-    e.preventDefault();
-    //console.log(this.state.id);
+    console.log("test");
+    console.log(this.state);
     axios
-      .put(
-        "http://localhost:3001/api/products/" +
-          {
-            name: this.state.name,
-            price: this.state.price,
-            img: this.state.img
-          }
-      )
+      .post("http://localhost:3001/api/products/", {
+        name: this.state.name,
+        price: this.state.price,
+        img: this.state.img
+      })
       .then(response => {
-        console.log(response.data);
+        //console.log(response.data);
         this.setState({
           name: this.state.name,
           price: this.state.price,
@@ -45,13 +44,13 @@ class Form extends Component {
       });
   };
 
-  cancelHandler = e => {
-    e.preventDefault();
+  cancelHandler = () => {
     this.setState({
       name: "",
       price: 0,
       img: ""
     });
+    console.log(this.state);
   };
 
   render() {
@@ -82,9 +81,9 @@ class Form extends Component {
             onChange={this.onChangeHandler2}
           />
           <br />
-          <button onClick={() => this.formHandler}>Add to Inventory</button>
-          <button onClick={() => this.cancelHandler}>Cancel</button>
+          <button>Add to Inventory</button>
         </form>
+        <button onClick={this.cancelHandler}>Cancel</button>
       </div>
     );
   }
