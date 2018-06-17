@@ -15,7 +15,9 @@ module.exports = {
 
   read_products: (req, res, next) => {
     let db = req.app.get("db");
+
     db.read_products().then(products => {
+      console.log("readProducts", products);
       return res.status(200).send(products);
     });
   }

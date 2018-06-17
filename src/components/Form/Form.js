@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
+import "./Form";
 
 class Form extends Component {
   constructor() {
@@ -55,7 +56,7 @@ class Form extends Component {
 
   render() {
     return (
-      <div>
+      <div className="form">
         <form onSubmit={this.formHandler}>
           Image URL:
           <input

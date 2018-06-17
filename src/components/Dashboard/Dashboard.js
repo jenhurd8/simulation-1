@@ -3,7 +3,7 @@ import Product from "../Product/Product";
 
 class Dashboard extends Component {
   render(props) {
-    console.log(this.props.inventory);
+    console.log("dashboard", this.props.inventory);
     let list = this.props.inventory.map((element, index) => {
       return (
         <div>
@@ -14,9 +14,7 @@ class Dashboard extends Component {
 
     return (
       <div>
-        Dashboard
         {list}
-        <h2> test </h2>
         <Product inventory={this.props.inventory} />
       </div>
     );

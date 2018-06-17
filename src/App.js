@@ -3,6 +3,7 @@ import "./App.css";
 import Form from "./components/Form/Form";
 import Dashboard from "./components/Dashboard/Dashboard";
 import Header from "./components/Header/Header";
+import axios from "axios";
 
 class App extends Component {
   constructor() {
@@ -23,6 +24,16 @@ class App extends Component {
       ]
     };
   }
+
+  componentDidMount() {
+    axios.get("http://localhost:3001/api/products").then(response => {
+      console.log("response.data: ", response.data);
+      this.setState({
+        inventory: response.data
+      });
+    });
+  }
+
   render() {
     return (
       <div className="App">
