@@ -1,13 +1,18 @@
 import React, { Component } from "react";
 import Product from "../Product/Product";
+import "./Dashboard.css";
 
 class Dashboard extends Component {
   render(props) {
     console.log("dashboard", this.props.inventory);
     let list = this.props.inventory.map((element, index) => {
       return (
-        <div>
-          <Product />
+        <div key={index}>
+          <Product
+            image={this.props.inventory[index].image}
+            name={this.props.inventory[index].name}
+            price={this.props.inventory[index].price}
+          />
         </div>
       );
     });

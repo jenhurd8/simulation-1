@@ -34,12 +34,26 @@ class App extends Component {
     });
   }
 
+  // continuous loop when added
+  // componentDidUpdate() {
+  //   axios.get("http://localhost:3001/api/products").then(response => {
+  //     console.log("response.data: ", response.data);
+  //     this.setState({
+  //       inventory: response.data
+  //     });
+  //   });
+  // }
+
   render() {
     return (
       <div className="App">
         <Header />
-        <Dashboard inventory={this.state.inventory} />
-        <Form />
+        <div className="dashboard">
+          <Dashboard inventory={this.state.inventory} />
+        </div>
+        <div className="form">
+          <Form />
+        </div>
       </div>
     );
   }

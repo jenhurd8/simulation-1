@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
-import "./Form";
+import "./Form.css";
 
 class Form extends Component {
   constructor() {
@@ -13,6 +13,9 @@ class Form extends Component {
     };
     this.formHandler = this.formHandler.bind(this);
     this.cancelHandler = this.cancelHandler.bind(this);
+    this.onChangeHandler = this.onChangeHandler.bind(this);
+    this.onChangeHandler1 = this.onChangeHandler1.bind(this);
+    this.onChangeHandler2 = this.onChangeHandler2.bind(this);
   }
 
   onChangeHandler = e => {
