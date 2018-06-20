@@ -11,16 +11,16 @@ class App extends Component {
 
     this.state = {
       inventory: [
-        {
-          name: "dog",
-          price: 500,
-          img: "later"
-        },
-        {
-          name: "dog2",
-          price: 1500,
-          img: "later2"
-        }
+        // {
+        //   name: "dog",
+        //   price: 500,
+        //   img: "later"
+        // },
+        // {
+        //   name: "dog2",
+        //   price: 1500,
+        //   img: "later2"
+        // }
       ]
     };
   }
@@ -33,16 +33,6 @@ class App extends Component {
       });
     });
   }
-
-  // continuous loop when added
-  // componentDidUpdate() {
-  //   axios.get("http://localhost:3001/api/products").then(response => {
-  //     console.log("response.data: ", response.data);
-  //     this.setState({
-  //       inventory: response.data
-  //     });
-  //   });
-  // }
 
   render() {
     return (

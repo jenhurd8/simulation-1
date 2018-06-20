@@ -1,7 +1,14 @@
 .product {
-  text-align: right;
+  text-align: left;
   background-color: #d34735;
   border-radius: 2%;
   margin: 20px;
-  padding: 150px;
+  padding: 40px;
+  width: 25vw;
+  height: 10vh;
+}
+
+#image {
+  height: 100px;
+  width: 150px;
 }

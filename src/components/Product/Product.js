@@ -4,9 +4,9 @@ import "./Product.css";
 export default function Product(props) {
   return (
     <div className="product">
-      {props.image}
-
+      <img id="image" src={props.img} alt="noPic" />
       {props.name}
+      <br />$
       {props.price}
     </div>
   );

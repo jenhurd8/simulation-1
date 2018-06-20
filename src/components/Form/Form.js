@@ -19,6 +19,7 @@ class Form extends Component {
   }
 
   onChangeHandler = e => {
+    // this.setState({ img: `" ${e.target.value} "` });
     this.setState({ img: e.target.value });
   };
   onChangeHandler1 = e => {
@@ -87,6 +88,8 @@ class Form extends Component {
           <br />
           <button>Add to Inventory</button>
         </form>
+        <br />
+        <br />
         <button onClick={this.cancelHandler}>Cancel</button>
       </div>
     );

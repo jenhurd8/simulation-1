@@ -9,7 +9,7 @@ class Dashboard extends Component {
       return (
         <div key={index}>
           <Product
-            image={this.props.inventory[index].image}
+            img={this.props.inventory[index].img}
             name={this.props.inventory[index].name}
             price={this.props.inventory[index].price}
           />
@@ -20,7 +20,7 @@ class Dashboard extends Component {
     return (
       <div>
         {list}
-        <Product inventory={this.props.inventory} />
+        {/* <Product inventory={this.props.inventory} /> */}
       </div>
     );
   }
